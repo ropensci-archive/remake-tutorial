@@ -225,6 +225,11 @@ One of the best things about remake is re-running your whole pipeline on a new d
 
 Try running this on the whole gapminder dataset. 
 
+```{yaml}
+gapminder:
+    command: read.csv(file = "gapminder.csv")
+```
+
 
 ### R Markdown file
 
