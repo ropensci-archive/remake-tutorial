@@ -240,7 +240,7 @@ was generated with another R script
 
 
 
-### Further understanding
+### Further understanding - dependencies
 
 Dependencies are an important component of remake. Dependencies ensure that a target gets remade every time any of the dependencies changes. With `remake` there are implicit and explicit dependencies. Implicit dependencies are objects that are called within a function. E.g.,
 
@@ -270,5 +270,16 @@ You can also have explicit dependencies. When the creation of an object/output i
     # explicit dependencies
 
     # "report.Rmd" is an implicit dependency
+
+```
+
+Not every argument that you pass to a function needs to be a dependency. For example, when we specify what countries we want to plot, we do not want remake to look for variables called `South Africa`, `Morocco`, `Algeria`, and `Nigeria` because these are columns in the dataset gapminder. To tell remake that certain arguments are not considered as dependencies use the function I(). 
+
+```{yaml}
+
+  figures/plot_by_country.png:
+    command: plot_by_country(gapminder, I(countries = c("South Africa", "Morocco", "Algeria", "Nigeria")))
+    # using the I() function to tell remake that the countries argument values should be treated as is
+    # not as dependencies
 
 ```
