@@ -36,11 +36,9 @@ In this use case, we will
 
 
 
+In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together. These steps are called the targets, rules and dependencies on `remake`.
 
-
-In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together.
-Targets, rules and dependencies should be used to address your question of interest. What is your question?
-"Targets": What are you going to generate. What do you need to generate your final report, what plots and analyses are you going to include?
+"Targets": What are you going to generate. These can be files or R objects. 
 "Rules": How are you going to generate your targets. What functions do you need?
 "Dependencies": What do you need to generate your targets. These may be other targets that you need for a particular target. Bear in mind that you might have several intermediate targets to produce your final target.
 
