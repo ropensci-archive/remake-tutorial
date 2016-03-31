@@ -109,7 +109,7 @@ targets:
       - report.html
 
   gapminder:
-    command: read.csv(file = "data/gapminder.csv")
+    command: read.csv(file = "gapminder1952-1977.csv")
 ```
 
 The next targets we need is our transformed data frame and the plots. The rules for the plots are the plotting functions we defined in the function file.
@@ -130,7 +130,7 @@ targets:
       - report.html
 
   gapminder:
-    command: read.csv(file = "data/gapminder.csv")
+    command: read.csv(file = "gapminder1952-1977.csv")
 
   mean_lifeExp_by_continent_data:
     command: mean_lifeExp_by_continent(gapminder)
@@ -161,7 +161,7 @@ targets:
       - report.html
 
   gapminder:
-    command: read.csv(file = "data/gapminder.csv")
+    command: read.csv(file = "gapminder1952-1977.csv")
 
   mean_lifeExp_by_continent_data:
     command: mean_lifeExp_by_continent(gapminder)
@@ -217,6 +217,13 @@ You can diagram your whole pipeline using the `diagram()` function.
 Our current pipeline looks like this:
 
 ![Diagram](diagram.png)
+
+
+### Re-running with a new data set
+
+One of the best things about remake is re-running your whole pipeline on a new data set. 
+
+Try running this on the whole gapminder dataset. 
 
 
 ### R Markdown file
