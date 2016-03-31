@@ -4,9 +4,8 @@ output: html_document
 
 What are the trends in life expectancy between the years 1952 - 1982 for each continent?
 
-[Change in life expectancy over time by continent.](figure/mean_lifeExp_by_continent.png)
+![Change in life expectancy over time by continent.](figure/mean_lifeExp_by_continent.png)
 
 How do these trends in life expectancy vary across the following four countries over the years 1952 - 1982?
 
-[Change in life expectancy over time across four countries.](figure/plot_by_country.png)
-
+![Change in life expectancy over time across four countries.](figure/plot_by_country.png)
