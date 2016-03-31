@@ -127,7 +127,7 @@ sources:
 targets:
   all:
     depends:
-      - report.html
+      - report.html 
 
   gapminder:
     command: read.csv(file = "data/gapminder.csv")
@@ -142,9 +142,7 @@ targets:
     command: plot_by_country(gapminder, I(countries = c("South Africa", "Morocco", "Algeria", "Nigeria")))
 ```
 
-Finally we want to create the output which is the hmtl report. With `remake` you can define implicit and explicit dependencies. 
-If your target depends on more than one object, you can list all the dependencies to make sure that the target gets remade every time any of the dependencies changes. 
-
+Finally we want to create the output which is the html report.   
 
 ```{yaml}
 packages:
@@ -180,7 +178,6 @@ targets:
 
 ```
 
-
 ### Running remake
 
 Go to the working directory where the YML file is
@@ -205,6 +202,8 @@ make()
 
 ### Diagram your pipeline
 
+The [DiagrammeR package](http://rich-iannone.github.io/DiagrammeR/) allows you to make awesome graph diagrams in R!
+
 **Install and load the libraries**
 
 ```{r}
@@ -219,6 +218,7 @@ Our current pipeline looks like this:
 ![Diagram](diagram.png)
 
 
+
 ### R Markdown file
 
 In the RMarkdown file, the R code
@@ -228,3 +228,38 @@ In the RMarkdown file, the R code
 - has a function that plots the life expectancy for 4 countries over time
 - imports a plot of average life expectancy per continent over time that
 was generated with another R script
+
+
+
+### Further understanding
+
+Dependencies are an important component of remake. Dependencies ensure that a target gets remade every time any of the dependencies changes. With `remake` there are implicit and explicit dependencies. Implicit dependencies are objects that are called within a function. E.g.,
+
+```{yaml}
+
+  gapminder:
+    command: read.csv(file = "data/gapminder.csv")
+  # "data/gapminder.csv" is an implicit dependency
+
+  mean_lifeExp_by_continent_data:
+    command: mean_lifeExp_by_continent(gapminder)
+  # gapminder is an implicit dependency
+
+``` 
+
+You can also have explicit dependencies. When the creation of an object/output is dependent on one or more objects that are never referenced in a function, you must explicitly state these dependencies. E.g., 
+
+```{yaml}
+
+  report.html:
+    depends:
+      - figures/mean_lifeExp_by_continent.png
+      - figures/plot_by_country.png
+    command: render("report.Rmd")
+
+    # figures/mean_lifeExp_by_continent.png and figures/plot_by_country.png are 
+    # explicit dependencies
+
+    # "report.Rmd" is an implicit dependency
+
+```
