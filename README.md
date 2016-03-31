@@ -93,5 +93,18 @@ sources:
 
 ### Running remake
 
+Go to the directory where these files are
+
+At the R command line
+
+**Install and load the libraries**
+
+install.packages("devtools")
+devtools::install_github("richfitz/remake")
+library(remake)
+
+**Run make**
+
+make()
 
 
