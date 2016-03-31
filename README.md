@@ -47,6 +47,7 @@ sent us the data from 1985 to 2102. So, we have two files:
 
 **gapminder1982-2007.csv** - Gapminder data from 1982 to 2007
 
+### Remake components 
 
 In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together. These steps are called the targets, rules and dependencies on `remake`.
 
