@@ -8,10 +8,12 @@ The [remake package](https://github.com/richfitz/remake) is "Make-like build man
 - Make your workflow reproducible since it incorporates the data importing, analysis and reporting in the same piepeline
 
 This tutorial will assume you have a working understanding of the following topics:
-The `gapminder` dataset
-Writing functions in R
-Generating plots using `ggplot2`
-Using the `dplyr` package for data manipulation
+
+- The `gapminder` dataset
+-  Writing functions in R
+-  Generating plots using `ggplot2`
+-  Using the `dplyr` package for data manipulation
+
 If you need a refresher on any of these topics, a great resource that covers them is provided by [Data Carpentry](http://www.datacarpentry.org/R-ecology-lesson/).  We will also use [`rmarkdown`](http://rmarkdown.rstudio.com/authoring_quick_tour.html) to generate a PDF report from our R code.
 
 The example uses Jenny Bryan's excerpt of the Gapminder data. The
