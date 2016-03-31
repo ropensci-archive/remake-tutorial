@@ -1,0 +1,31 @@
+packages:
+  - dplyr
+  - ggplot2
+  - rmarkown
+
+sources:
+  -functions.R
+
+targets:
+  all:
+    depends:
+      - final_report.html
+
+  imported_gap:
+    command: read.csv(file = "data/gapminder.csv")
+
+  transformed_gap:
+    command: transform(imported_gap)
+
+  PLOT1:
+    command: plot(transformed_gap)
+
+  final_report.html:
+    depends:
+      - PLOT1
+    command: render(final_report.Rmd)
+
+
+
+
+
