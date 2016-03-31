@@ -179,16 +179,23 @@ targets:
 
 ### Running remake
 
-In order to run remake you need to load remake on your library
+Go to the directory where these files are
 
-```{r}
-load(remake)
-```
-And then just run the `make` function. After you run this function, check your working directory to see your report.html
+At the R command line
 
-```{r}
+**Install and load the libraries**
+
+install.packages("devtools")
+devtools::install_github("richfitz/remake")
+library(remake)
+
+**Run make**
+
 make()
-```
+
+### Diagram your pipeline
+
+
 
 ### R Markdown file
 

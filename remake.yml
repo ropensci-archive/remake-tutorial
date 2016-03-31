@@ -18,9 +18,11 @@ targets:
     command: mean_lifeExp_by_continent(gapminder)
 
   figures/mean_lifeExp_by_continent.png:
+    plot: true
     command: plot_mean_lifeExp(mean_lifeExp_by_continent_data)
 
   figures/plot_by_country.png:
+    plot: true
     command: plot_by_country(gapminder, I(countries = c("South Africa", "Morocco", "Algeria", "Nigeria")))
 
   report.html:

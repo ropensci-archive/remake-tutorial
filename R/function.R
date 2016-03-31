@@ -6,15 +6,13 @@ mean_lifeExp_by_continent <- function(gpmndr) {
         )
 }
 
-plot_mean_lifeExp <- function(gpmndr_continent, plot_file = "figures/mean_lifeExp_by_continent.png") {
+plot_mean_lifeExp <- function(gpmndr_continent) {
     ggplot(gpmndr_continent, aes(x = year, y = mean_lifeExp, group = continent, colour = continent)) +
         geom_line() +
         xlab("Year") + ylab("Mean life expectancy")
-    ggsave(filename = plot_file)
 }
 
-plot_by_country <- function(gpmndr, countries = c("South Africa", "Morocco", "Algeria", "Nigeria"),
-                            plot_file = "figures/plot_by_country.png") {
+plot_by_country <- function(gpmndr, countries = c("South Africa", "Morocco", "Algeria", "Nigeria")) {
 
     not_found <- countries[! countries %in% unique(gpmndr[["country"]])]
     if(length(not_found) > 0) {
@@ -28,5 +26,4 @@ plot_by_country <- function(gpmndr, countries = c("South Africa", "Morocco", "Al
         geom_line() +
         facet_wrap(~ country) +
         xlab("Year") + ylab("Life Expectancy")
-    ggsave(filename = plot_file)
 }
