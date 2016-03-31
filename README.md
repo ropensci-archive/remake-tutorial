@@ -32,15 +32,46 @@ In this use case, we will
 
 - Are there differences in the life expectancy trends over time by continent?
 - How do the trends in life expectancy differ between 4 countries in Africa?
-- How do 
+
+- We have new data starting in 1985. After the data from 1985 to 2012 is added, 
+are there changes in trends?
+
+### Data
+
+We had the Gapminder data through 1985 and did the analysis. Then our collaborator
+sent us the data from 1985 to 2102. So, we have two files:
+
+**file1** - Gapminder data from .. to 1985
+**file2** - Gapminder data from 1986 to 2012
+
+### Targets
+
+To answer our questions, we will need:
+
+- a plot of average life expectancy per continent over time
+- a plot of life expectancy for the 4 countries over time
+
+
+### R Markdown file
+
+In the RMarkdown file, the R code
+
+- imports the data
+- has a function that transforms the data for the analysis
+- has a function that plots the life expectancy for 4 countries over time
+- imports a plot of average life expectancy per continent over time that
+was generated with another R script
+
+
+### YAML file
 
 
 
+### Running remake
 
+In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together. These steps are called the targets, rules and dependencies on `remake`.
 
-In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together.
-Targets, rules and dependencies should be used to address your question of interest. What is your question?
-"Targets": What are you going to generate. What do you need to generate your final report, what plots and analyses are you going to include?
+"Targets": What are you going to generate. These can be files or R objects. 
 "Rules": How are you going to generate your targets. What functions do you need?
 "Dependencies": What do you need to generate your targets. These may be other targets that you need for a particular target. Bear in mind that you might have several intermediate targets to produce your final target.
 
