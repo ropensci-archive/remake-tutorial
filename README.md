@@ -5,7 +5,7 @@ This is a use case and tutorial for the R package **remake**
 The [remake package](https://github.com/richfitz/remake) is "Make-like build management, reimagined for R". Using the package allows you to:
 
 - Change parts of your workflow and only update what changed
-- Make your workflow reproducible since it incorporates the data importing, analysis and reporting in the same piepeline
+- Make your workflow reproducible since it incorporates the data importing, analysis and reporting in the same pipeline
 
 This tutorial will assume you have a working understanding of the following topics:
 
