@@ -202,16 +202,15 @@ make()
 
 ### Diagram your pipeline
 
-The [DiagrammeR package](http://rich-iannone.github.io/DiagrammeR/) allows you to make awesome graph diagrams in R!
+Remake uses the [DiagrammeR package](http://rich-iannone.github.io/DiagrammeR/) to visualize your workflows!
 
-**Install and load the libraries**
+Make sure DiagrammeR is installed. 
 
 ```{r}
 devtools::install_github('rich-iannone/DiagrammeR')
-library(DiagrammeR)
 ```
 
-You can diagram your whole pipeline using the `diagram()` function.
+You can diagram your whole pipeline using the `diagram()` function from remake. 
 
 Our current pipeline looks like this:
 
