@@ -41,8 +41,8 @@ are there changes in trends?
 We had the Gapminder data through 1985 and did the analysis. Then our collaborator
 sent us the data from 1985 to 2102. So, we have two files:
 
-**file1** - Gapminder data from .. to 1985
-**file2** - Gapminder data from 1986 to 2012
+**gapminder1952-1977.csv** - Gapminder data from .. to 1985
+**gapminder1982-2007.csv** - Gapminder data from 1986 to 2012
 
 
 In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together. These steps are called the targets, rules and dependencies on `remake`.
@@ -179,8 +179,16 @@ targets:
 
 ### Running remake
 
+In order to run remake you need to load remake on your library
 
+```{r}
+load(remake)
+```
+And then just run the `make` function. After you run this function, check your working directory to see your report.html
 
+```{r}
+make()
+```
 
 ### R Markdown file
 
