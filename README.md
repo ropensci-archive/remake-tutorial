@@ -41,8 +41,9 @@ are there changes in trends?
 We had the Gapminder data through 1985 and did the analysis. Then our collaborator
 sent us the data from 1985 to 2102. So, we have two files:
 
-**gapminder1952-1977.csv** - Gapminder data from .. to 1985
-**gapminder1982-2007.csv** - Gapminder data from 1986 to 2012
+**gapminder1952-1977.csv** - Gapminder data from 1952 to 1977
+
+**gapminder1982-2007.csv** - Gapminder data from 1982 to 2007
 
 
 In order to create your workflow you need to describe the beginning, intermediate and end points of your analysis, and how they flow together. These steps are called the targets, rules and dependencies on `remake`.
@@ -179,21 +180,33 @@ targets:
 
 ### Running remake
 
-Go to the directory where these files are
+Go to the working directory where the YML file is
 
-At the R command line
+On the console install and load remake
 
 **Install and load the libraries**
 
+```{r}
 install.packages("devtools")
 devtools::install_github("richfitz/remake")
 library(remake)
+```
 
 **Run make**
 
+On the console run `make`
+
+```{r}
 make()
+```
 
 ### Diagram your pipeline
+
+You can diagram your whole pipeline using the `diagram()` function. 
+
+Our current pipeline looks like this:
+
+![Diagram](diagram.png)
 
 
 
