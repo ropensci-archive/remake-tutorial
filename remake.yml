@@ -1,31 +1,30 @@
 packages:
   - dplyr
   - ggplot2
-  - rmarkown
+  - rmarkdown
 
 sources:
-  -functions.R
+  - R/function.R
 
 targets:
   all:
     depends:
-      - final_report.html
+      - report.html
 
-  imported_gap:
+  gapminder:
     command: read.csv(file = "data/gapminder.csv")
 
-  transformed_gap:
-    command: transform(imported_gap)
+  mean_lifeExp_by_continent_data:
+    command: mean_lifeExp_by_continent(gapminder)
 
-  PLOT1:
-    command: plot(transformed_gap)
+  figures/mean_lifeExp_by_continent.png:
+    command: plot_mean_lifeExp(mean_lifeExp_by_continent_data)
 
-  final_report.html:
+  figures/plot_by_country.png:
+    command: plot_by_country(gapminder, I(countries = c("South Africa", "Morocco", "Algeria", "Nigeria")))
+
+  report.html:
     depends:
-      - PLOT1
-    command: render(final_report.Rmd)
-
-
-
-
-
+      - figures/mean_lifeExp_by_continent.png
+      - figures/plot_by_country.png
+    command: render("report.Rmd")
