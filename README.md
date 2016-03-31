@@ -205,14 +205,14 @@ make()
 
 ### Diagram your pipeline
 
-You can diagram your whole pipeline using the `diagram()` function. 
-
 **Install and load the libraries**
 
 ```{r}
 devtools::install_github('rich-iannone/DiagrammeR')
 library(DiagrammeR)
 ```
+
+You can diagram your whole pipeline using the `diagram()` function.
 
 Our current pipeline looks like this:
 
