@@ -207,10 +207,16 @@ make()
 
 You can diagram your whole pipeline using the `diagram()` function. 
 
+**Install and load the libraries**
+
+```{r}
+devtools::install_github('rich-iannone/DiagrammeR')
+library(DiagrammeR)
+```
+
 Our current pipeline looks like this:
 
 ![Diagram](diagram.png)
-
 
 
 ### R Markdown file
