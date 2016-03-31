@@ -5,7 +5,7 @@ This is a use case and tutorial for the R package **remake**
 The [remake package](https://github.com/richfitz/remake) is "Make-like build management, reimagined for R". Using the package allows you to:
 
 - Change parts of your workflow and only update what changed
-- Make your workflow reproducible since it incorporates the data importing, analysis and reporting in the same piepeline
+- Make your workflow reproducible since it incorporates the data importing, analysis and reporting in the same pipeline
 
 This tutorial will assume you have a working understanding of the following topics:
 
@@ -40,8 +40,8 @@ are there changes in trends?
 
 ### Data
 
-We had the Gapminder data through 1985 and did the analysis. Then our collaborator
-sent us the data from 1985 to 2102. So, we have two files:
+We had the Gapminder data through 1977 and did the analysis. Then our collaborator
+sent us the data from 1982 to 2007. So, we have two files:
 
 **gapminder1952-1977.csv** - Gapminder data from 1952 to 1977
 
