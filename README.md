@@ -35,13 +35,13 @@ In this use case, we will
 - Are there differences in the life expectancy trends over time by continent?
 - How do the trends in life expectancy differ between 4 countries in Africa?
 
-- We have new data starting in 1985. After the data from 1985 to 2012 is added, 
+- We have new data starting in 1982. After the data from 1982 to 2007 is added, 
 are there changes in trends?
 
 ### Data
 
-We had the Gapminder data through 1985 and did the analysis. Then our collaborator
-sent us the data from 1985 to 2102. So, we have two files:
+We had the Gapminder data through 1977 and did the analysis. Then our collaborator
+sent us the data from 1982 to 2007. So, we have two files:
 
 **gapminder1952-1977.csv** - Gapminder data from 1952 to 1977
 
@@ -222,11 +222,11 @@ Our current pipeline looks like this:
 
 One of the best things about remake is re-running your whole pipeline on a new data set. 
 
-Try running this on the whole gapminder dataset. 
+Try running this on gapminder dataset from 1982 - 2007. 
 
 ```{yaml}
 gapminder:
-    command: read.csv(file = "gapminder.csv")
+    command: read.csv(file = "gapminder1982-2007.csv")
 ```
 
 ### R Markdown file
